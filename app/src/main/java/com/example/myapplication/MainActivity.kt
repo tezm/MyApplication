@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -18,6 +19,11 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.addButton.setOnClickListener {
+            val myIntent = Intent(this, NewTripActivity::class.java)
+            startActivity(myIntent)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
