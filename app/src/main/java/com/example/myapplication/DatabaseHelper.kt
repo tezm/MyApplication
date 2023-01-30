@@ -13,7 +13,7 @@ class DatabaseHelper(val context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object {
         const val DATABASE_NAME = "SailingDatabase.db"
-        const val DATABASE_VERSION = 1
+        const val DATABASE_VERSION = 2
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -63,7 +63,7 @@ class DatabaseHelper(val context: Context) :
         db?.execSQL(create_routes)
 
         val create_trips = """CREATE TABLE TRIPS (
-            trip_id INTEGER PRIMARY KEY,
+            trip_id INTEGER PRIMARY KEY AUTOINCREMENT,
             start_date TEXT,
             end_date TEXT,
             number_of_ppl INTEGER,
@@ -416,7 +416,7 @@ class DatabaseHelper(val context: Context) :
     fun addTrip(trip: Trip): Long {
         val db = this.writableDatabase
         val contentValues = ContentValues()
-        contentValues.put("trip_id", trip.trip_id)
+        //contentValues.put("trip_id", trip.trip_id)
         contentValues.put("start_date", trip.start_date)
         contentValues.put("end_date", trip.end_date)
         contentValues.put("number_of_ppl", trip.number_of_ppl)
