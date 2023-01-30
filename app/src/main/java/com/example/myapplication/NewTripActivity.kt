@@ -9,8 +9,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.myapplication.databinding.ActivityNewTripBinding
 
-class NewTripActivity : AppCompatActivity() {
 
+class NewTripActivity: AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityNewTripBinding
 
