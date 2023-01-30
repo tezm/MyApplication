@@ -1,10 +1,10 @@
 package com.example.myapplication
 
 class Route(
-    val route_id : Int,
-    val length : Float,
-    val duration : Int,
-    val user : User?,
+    var route_id : Int,
+    var length : Float,
+    var duration : Int,
+    var user : User?,
     val consistingPorts : ArrayList<Port>
 ) {
 }

@@ -9,7 +9,6 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 
-
 class DatabaseHelper(val context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object {
@@ -120,20 +119,38 @@ class DatabaseHelper(val context: Context) :
         db.execSQL("DELETE FROM CONSISTS_OF")
     }
 
+    fun populateIfNeeded() {
+        if (getPorts().size == 0) {
+            populate()
+        }
+    }
+
     fun populate() {
-        val user = User(1, "John", "Doe", "2000-01-01", "M",
-                        "j.doe@gmail.com", "123456789", "password")
+        val user = User(
+            1, "John", "Doe", "2000-01-01", "M",
+            "j.doe@gmail.com", "123456789", "password"
+        )
         addUser(user)
-        val p1 = Port(1, "port one", "this port is the first inserted port",
-            1.11f, 1.11f, 47, 11)
-        val p2 = Port(2, "port two", "this port is the second inserted port",
-            2.22f, 2.22f, 76, 42)
-        val p3 = Port(3, "port three", "this port is the third inserted port",
-            3.33f, 3.33f, 44, 34)
-        val p4 = Port(4, "port four", "this port is the fourth inserted port",
-            4.44f, 4.44f, 12, 8)
-        val p5 = Port(5, "port five", "this port is the fifth inserted port",
-            5.55f, 5.55f, 32, 22)
+        val p1 = Port(
+            1, "port one", "this port is the first inserted port",
+            1.11f, 1.11f, 47, 11
+        )
+        val p2 = Port(
+            2, "port two", "this port is the second inserted port",
+            2.22f, 2.22f, 76, 42
+        )
+        val p3 = Port(
+            3, "port three", "this port is the third inserted port",
+            3.33f, 3.33f, 44, 34
+        )
+        val p4 = Port(
+            4, "port four", "this port is the fourth inserted port",
+            4.44f, 4.44f, 12, 8
+        )
+        val p5 = Port(
+            5, "port five", "this port is the fifth inserted port",
+            5.55f, 5.55f, 32, 22
+        )
         addPort(p1)
         addPort(p2)
         addPort(p3)

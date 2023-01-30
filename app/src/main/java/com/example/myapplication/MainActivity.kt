@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val db = DatabaseHelper(this)
+        db.populateIfNeeded()
+
         binding.addButton.setOnClickListener {
             val myIntent = Intent(this, NewTripActivity::class.java)
             startActivity(myIntent)
