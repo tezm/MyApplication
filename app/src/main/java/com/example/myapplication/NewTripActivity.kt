@@ -36,11 +36,17 @@ class NewTripActivity : AppCompatActivity() {
 
             startActivityForResult(intent, 1)
         }
+
+        binding.goOn.setOnClickListener{
+            val intent = Intent(this, BoatActivity::class.java)
+            startActivityForResult(intent, 2)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && resultCode == RESULT_OK) {
+            // portsActivity
             val nextPortId = data?.getIntExtra("port_id", -1) ?: -1
             val nextPort = db.getPort(nextPortId )!!
             trip.route?.consistingPorts?.add(nextPort)
@@ -50,6 +56,18 @@ class NewTripActivity : AppCompatActivity() {
             val ports = (trip?.route?.consistingPorts)!!
             portsText += ports.joinToString(", ") { it.name }
             binding.textViewHere.text =portsText
+        }
+
+        if(requestCode == 2 && resultCode == RESULT_OK) {
+            // confirm button pressed and boat selected.
+            trip.start_date = binding.from.text.toString()
+            trip.end_date = binding.ToField.text.toString()
+            val user = db.getUser(1)!! // We assume that one exists, unimplemented use case.
+            trip.user = user
+            trip.number_of_ppl = binding.NumberOfPeople.text.toString().toIntOrNull() ?: 1 // We should validate this.
+            val db = DatabaseHelper(this)
+            db.addTrip(trip)
+            finish()
         }
     }
 

@@ -21,10 +21,12 @@ class BoatActivity : AppCompatActivity() {
         binding = ActivityBoatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.BoatsRecycleView.adapter =BoatsListAdapter(this, DatabaseHelper(this))
 
-        val navController = findNavController(R.id.nav_host_fragment_content_boat)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        binding.goBackBoats.setOnClickListener{
+            setResult(RESULT_CANCELED, null)
+            finish()
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

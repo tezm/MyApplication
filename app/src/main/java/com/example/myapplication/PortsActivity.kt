@@ -28,6 +28,11 @@ class PortsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.PortsRecycleView.adapter = adapter
+
+        binding.goBackPorts.setOnClickListener{
+            setResult(RESULT_CANCELED, null)
+            finish()
+        }
     }
 
 
