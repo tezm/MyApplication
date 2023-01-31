@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-class User(
+data class User(
     val user_id : Int,
     val name : String,
     val surname : String,

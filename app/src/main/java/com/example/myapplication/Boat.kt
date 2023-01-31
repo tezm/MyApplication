@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-class Boat(
+data class Boat(
     val boat_id : Int,
     val name : String,
     val description : String,

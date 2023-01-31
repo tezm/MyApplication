@@ -1,7 +1,7 @@
 package com.example.myapplication
 
 
-class Trip(
+data class Trip(
     var trip_id : Int,
     var start_date : String,
     var end_date : String,

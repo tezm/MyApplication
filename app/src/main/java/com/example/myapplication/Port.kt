@@ -1,5 +1,6 @@
 package com.example.myapplication
-class Port (
+
+data class Port (
     val port_id : Int,
     val name : String,
     val description : String,

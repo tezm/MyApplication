@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-class Route(
+data class Route(
     var route_id : Int,
     var length : Float,
     var duration : Int,
