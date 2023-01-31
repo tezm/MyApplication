@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-class IsReachable (
+data class IsReachable (
     val port1 : Port,
     val port2 : Port,
     val distance: Float
