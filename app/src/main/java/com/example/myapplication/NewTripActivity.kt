@@ -52,9 +52,9 @@ class NewTripActivity : AppCompatActivity() {
             trip.route?.consistingPorts?.add(nextPort)
 
             // Update the ports field.
-            var portsText = "Ports: "
+            var portsText = ""
             val ports = (trip?.route?.consistingPorts)!!
-            portsText += ports.joinToString(", ") { it.name }
+            portsText += ports.joinToString("\n") { it.name }
             binding.textViewHere.text =portsText
         }
 

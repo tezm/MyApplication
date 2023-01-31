@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/new_trip_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CC373636"
-    tools:context=".NewTripActivity"
-    android:id="@+id/new_trip_page">
+    tools:context=".NewTripActivity">
 
 
     <TextView
@@ -55,13 +54,13 @@
             android:id="@+id/from"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="From"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:background="@drawable/border"
             android:layout_margin="5sp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:hint="From"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp"
 
 
             />
@@ -70,14 +69,13 @@
             android:id="@+id/To_field"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="To"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:textSize="18sp"
             android:layout_margin="5sp"
+            android:layout_weight="1"
             android:background="@drawable/border"
-            />
+            android:hint="To"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp" />
     </LinearLayout>
 
 
@@ -101,39 +99,41 @@
 
     <TextView
         android:id="@+id/textViewHere"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="136dp"
+        android:layout_height="174dp"
+        android:gravity="top"
         android:text="No ports added yet"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.664"
+        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintVertical_bias="0.66" />
 
     <Button
         android:id="@+id/addButtonTripPage"
-        android:layout_width="68dp"
-        android:layout_height="56dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:background="@drawable/ic_baseline_add_circle_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintHorizontal_bias="0.806"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.825" />
+        app:layout_constraintVertical_bias="0.83" />
 
     <TextView
         android:id="@+id/addNewPort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
         android:text="@string/add_new_port"
         android:textColor="@color/white"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.814" />
@@ -142,15 +142,16 @@
         android:id="@+id/confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
         android:text="@string/Confirm"
         android:textColor="@color/white"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.934" />
+        app:layout_constraintVertical_bias="0.924" />
 
     <Button
         android:id="@+id/goOn"
@@ -159,7 +160,7 @@
         android:background="@drawable/svgviewer_output"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintHorizontal_bias="0.789"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.933" />
