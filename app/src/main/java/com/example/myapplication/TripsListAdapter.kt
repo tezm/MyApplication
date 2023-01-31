@@ -25,7 +25,7 @@ class TripsListAdapter(
 
     override fun onBindViewHolder(holder: TripViewHolder, position: Int) {
         val trip = trips[position]!!
-        holder.textView.text = trip.start_date + " - " + trip.end_date
+        holder.textView.text = (trip.boat?.name ?: "invalid boat") + ", " + trip.number_of_ppl +" people\n     " + trip.start_date + " - " + trip.end_date
     }
 
     override fun getItemCount(): Int {
